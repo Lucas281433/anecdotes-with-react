@@ -1,0 +1,9 @@
+body {
+    font-family: "Arsenal SC", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.cardWidth {
+    width: 20rem;
+}

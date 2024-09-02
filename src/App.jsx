@@ -27,18 +27,12 @@ const App = () => {
     setVotes(votesCopy);
   };
 
-  const font = {
-    fontFmily: "Arsenal SC, sans-serif",
-    fontWeight: 700,
-    fontStyle: "italic",
-  };
-
   return (
-    <Container className="d-flex justify-content-center" style={font}>
+    <Container className="d-flex justify-content-center">
       <div>
         <h1 className="mb-4 text-center">Anecdote of the day</h1>
         <img src={image} width="350rem" />
-        <Card className="border border-primary" style={{ width: "20rem" }}>
+        <Card className="border border-primary cardWidth">
           <Card.Body>
             {anecdotes[selected]}
             <hr />
@@ -59,7 +53,7 @@ const App = () => {
         </div>
         <br />
         <h1 className="mb-4 text-center">Anecdote with most votes</h1>
-        <Card className="border border-primary" style={{ width: "20rem" }}>
+        <Card className="border border-primary cardWidth">
           <Card.Body>{anecdotes[votes.indexOf(Math.max(...votes))]}</Card.Body>
         </Card>
       </div>
