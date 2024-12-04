@@ -2,6 +2,13 @@ import { useState } from "react";
 import { Container, Button, Card } from "react-bootstrap";
 import image  from "./assets/anecdotes.avif";
 
+/**
+ * A simple React component that displays a random anecdote from a list,
+ * allows the user to vote for it, and displays the anecdote with the most
+ * votes at the bottom of the page.
+ *
+ * @return {React.ReactElement} The rendered component.
+ */
 const App = () => {
   const anecdotes = [
     "If it hurts, do it more often.",
@@ -17,10 +24,18 @@ const App = () => {
   const [selected, setSelected] = useState(0);
   const [votes, setVotes] = useState([0, 0, 0, 0, 0, 0, 0, 0]);
 
+
+/**
+ * Selects a random anecdote from the list and updates the selected state.
+ */
   const handleNextAnecdote = () => {
     setSelected(Math.floor(Math.random() * anecdotes.length));
   };
 
+  /**
+   * Increments the vote count for the currently selected anecdote.
+   * Uses the Functional Update pattern to update the state.
+   */
   const handleVote = () => {
     const votesCopy = [...votes];
     votesCopy[selected] += 1;
